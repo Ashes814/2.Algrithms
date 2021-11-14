@@ -33,3 +33,20 @@ def find_max(list):
     return list[0] if list[0] > find_max(list[1:]) else find_max(list[1:])
 
 print(find_max(list2))
+
+
+
+#快速排序
+def quicksort(array):
+    if find_length(array) < 2:
+        return array
+    else:
+        pivot = array[0] #设置每个数组的第一个值为基准值
+
+
+        less = [i for i in array[1:] if i <= pivot]
+        greater = [i for i in array[1:] if i > pivot]
+
+        return quicksort(less) + [pivot] + quicksort(greater)
+
+print(quicksort(list2))
